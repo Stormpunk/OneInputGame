@@ -15,7 +15,9 @@ public class PlayerController : MonoBehaviour
     private int resetCharge = 0;
     public int attackReset;
     public int damageRange;
-
+    public Transform attackPoint;
+    public float attackRange;
+    public LayerMask enemyLayers;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,22 +43,19 @@ public class PlayerController : MonoBehaviour
     }
     public void HeavyAttack()
     {
-        isAttackingHeavy = true;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left);
-        if (hit.collider != null)
+        //plays attack animation
+        //detect any enemies hit in range
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        //deals damage
+        foreach (Collider2D enemy in hitEnemies)
         {
-
+            Debug.Log("Hit" + enemy.name);
         }
+        //has a vulnerability period
         attackReset = 3;
     }
     public void LightAttack()
     {
-        isAttackingLight = true;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left);
-        if(hit.collider != null)
-        {
-
-        }
         attackReset = 1;
     }
 }

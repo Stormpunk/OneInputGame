@@ -434,6 +434,7 @@ MonoBehaviour:
   - {fileID: 1156171691}
   spawnCount: 0
   mustSpawnObject: 0
+  countdownTimer: 0
 --- !u!4 &1077663800
 Transform:
   m_ObjectHideFlags: 0
@@ -556,7 +557,7 @@ GameObject:
   - component: {fileID: 1156171694}
   - component: {fileID: 1156171693}
   - component: {fileID: 1156171692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: defender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,7 +652,7 @@ GameObject:
   - component: {fileID: 1736422507}
   - component: {fileID: 1736422506}
   - component: {fileID: 1736422505}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: attacker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

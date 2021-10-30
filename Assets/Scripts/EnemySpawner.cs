@@ -11,16 +11,15 @@ public class EnemySpawner : MonoBehaviour
     private int objIndex;
     private int spawnIndex;
     public bool mustSpawnObject;
-    float startIn = 1;
-    float every = 2;
+    public float countdownTimer;
     // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < spawnCount; i++)
         {
             objIndex = Random.Range(0, enemysToSpawn.Length);
-            GameObject go = Instantiate(enemysToSpawn[objIndex], spawnPoint[spawnIndex].position, Quaternion.identity);
-            spawnedObjects.Add(go);
+           // GameObject go = Instantiate(enemysToSpawn[objIndex], spawnPoint[spawnIndex].position, Quaternion.identity);
+           // spawnedObjects.Add(go);
         }
     }
 
@@ -34,7 +33,11 @@ public class EnemySpawner : MonoBehaviour
         // Update is called once per frame
         void Update()
         {
+            countdownTimer -= Time.deltaTime;
+            if (countdownTimer <= 0)
+            {
 
+            }
         }
     }
 }
